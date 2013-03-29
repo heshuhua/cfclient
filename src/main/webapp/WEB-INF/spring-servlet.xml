@@ -23,12 +23,14 @@
 	<!-- User @Controller, @Service... annotations -->
     <context:component-scan base-package="com.vanceinfo" />
     
+     <!-- Obtain a connection to the RabbitMQ via cloudfoundry-runtime: -->
+    <!-- <cloud:rabbit-connection-factory id="connectionFactory"/>  -->
     
-    <!-- Obtain a connection to the RabbitMQ via cloudfoundry-runtime: -->
-    <cloud:rabbit-connection-factory id="connectionFactory"/>
-
+    <rabbit:connection-factory id="connectionFactory" host="192.168.136.141" username="admin" password="admin" port="5672"/>
+    
+    
     <!-- Set up the AmqpTemplate/RabbitTemplate: -->
-    <rabbit:template connection-factory="connectionFactory"/>
+    <rabbit:template id="amqptemp" connection-factory="connectionFactory"/>
 
     <!-- Request that queues, exchanges and bindings be automatically
          declared on the broker: -->

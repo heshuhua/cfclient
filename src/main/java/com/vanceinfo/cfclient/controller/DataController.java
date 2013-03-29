@@ -61,7 +61,8 @@ public class DataController {
 		 System.out.println("--"+trans.getAmount());
 	     Transaction transaction = new Transaction(customerId, location, trans.getAmount());
 		 
-	     amqpTemplate.convertAndSend("messages", transaction.getCustomerId()+transaction.getLocation());
+	     
+	     amqpTemplate.convertAndSend("normalexchange","messages", transaction.getCustomerId()+" spended "+trans.getAmount()+" at:"+transaction.getLocation()+"");
 		 SenderService.sendMsg(transaction);
 		 setModelBeans(model);
 		 model.addAttribute("lastTransaction",transaction);
