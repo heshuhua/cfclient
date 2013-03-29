@@ -1,13 +1,13 @@
 
- Thymeleaf Examples: Say Hello! Extending Thymeleaf in 5 minutes
+Application On PaaS Examples: Several applications to complete the mission of customer
  ---------------------------------------------------------------
  
- This is an example project containing code used in the "Say Hello! Extending Thymeleaf
- in 5 minutes" article.
+ This is an example project containing code used in the "Hello PaaS" article.
  
  To learn more and download latest version:
  
-     http://www.thymeleaf.org
+     http://cfclient.cloudfoundry.com
+     http://cfmonitor.cloudfoundry.com
 
 
      
