@@ -1,3 +1,7 @@
+Pls note :
+
+These series application is under develped, and now not read to give it a try.
+
 
 Application On PaaS Examples: Several applications to complete the mission of customer
  ---------------------------------------------------------------
