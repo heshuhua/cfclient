@@ -2,6 +2,7 @@ package com.vanceinfo.cfclient.model;
 
 public class Transaction {
 	
+	long transactionId;
 	int customerId ;
 	String location;
 	int amount;
@@ -10,8 +11,9 @@ public class Transaction {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Transaction(int customerId, String location, int amount) {
+	public Transaction(long transactionId,int customerId, String location, int amount) {
 		super();
+		this.transactionId = transactionId;
 		this.customerId = customerId;
 		this.location = location;
 		this.amount = amount;
@@ -33,6 +35,18 @@ public class Transaction {
 	}
 	public void setAmount(int amount) {
 		this.amount = amount;
+	}
+
+	public long getTransactionId() {
+		return transactionId;
+	}
+
+	public void setTransactionId(long transactionId) {
+		this.transactionId = transactionId;
+	}
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
 	}
 	
 	

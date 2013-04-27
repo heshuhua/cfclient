@@ -49,8 +49,8 @@ public class DAO {
     
     public static List<Customer> loadAllCustomers() {
         List<Customer> customers = new ArrayList<Customer>();
-        customers.add(new Customer(Integer.valueOf(101), "Cloud", "Foundry", Gender.MALE, PaymentMethod.CREDIT_CARD, 3000));
-        customers.add(new Customer(Integer.valueOf(102), "Open", "Shift", Gender.FEMALE, PaymentMethod.BANK_TRANSFER, 12000));
+        customers.add(new Customer(Integer.valueOf(101), "fanto", "black", Gender.MALE, PaymentMethod.CREDIT_CARD, 3000));
+        customers.add(new Customer(Integer.valueOf(101), "fanto", "black", Gender.FEMALE, PaymentMethod.BANK_TRANSFER, 12000));
      
        
         return customers;
@@ -58,7 +58,7 @@ public class DAO {
 
 	public static Transaction loadTransaction(Transaction transaction) {
 		if(transaction ==null)
-			transaction = new Transaction(0,"BeiJing",100);
+			transaction = new Transaction(0,0,"BeiJing",100);
 		return transaction;
 	}
     

@@ -26,6 +26,8 @@ public class DataController {
 	@Autowired
 	AmqpTemplate amqpTemplate;
 	
+	public static long transactionid =1;
+	
 	private void setModelBeans(Model model) {
         model.addAttribute("product", DAO.loadProduct());
         model.addAttribute("productList", DAO.loadAllProducts());
@@ -59,10 +61,10 @@ public class DataController {
 		 
 		 System.out.println("--"+request.getParameter("customerid"));
 		 System.out.println("--"+trans.getAmount());
-	     Transaction transaction = new Transaction(customerId, location, trans.getAmount());
+	     Transaction transaction = new Transaction(transactionid++,customerId, location, trans.getAmount());
 		 
 	     
-	     amqpTemplate.convertAndSend("normalexchange","messages", transaction.getCustomerId()+" spended "+trans.getAmount()+" at:"+transaction.getLocation()+"");
+	     amqpTemplate.convertAndSend("norexchange","messages", transaction.getTransactionId()+":"+transaction.getCustomerId()+":"+trans.getAmount()+":"+transaction.getLocation()+"");
 		 SenderService.sendMsg(transaction);
 		 setModelBeans(model);
 		 model.addAttribute("lastTransaction",transaction);
